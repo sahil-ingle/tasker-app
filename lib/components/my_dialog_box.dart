@@ -13,14 +13,14 @@ class MyDialogBox extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AlertDialog(
-      backgroundColor: Colors.cyanAccent,
-      content: Container(
+      backgroundColor: Colors.white,
+      content: SizedBox(
         height: 200,
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             MyTextField(controller: mycontroller, obscureText: false, hintText: "Enter the task",),
-            SizedBox(height: 20,),
+            const SizedBox(height: 20,),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [MyButton(text: "Cancel", onTap: onCancelTap),MyButton(text: "Save", onTap: onSaveTap,)],

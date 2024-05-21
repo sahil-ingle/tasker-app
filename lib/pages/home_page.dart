@@ -15,7 +15,8 @@ class _HomePageState extends State<HomePage> {
 
   final _myBox = Hive.box("myBox");
   database db = database();
-
+  final taskText = TextEditingController();
+  
 
   @override
   void initState() {
@@ -29,11 +30,6 @@ class _HomePageState extends State<HomePage> {
     super.initState();
   }
 
-  
-
-  final taskText = TextEditingController();
-
-  void logout(){}
 
 
   void tickToggle(bool? value, int index){
@@ -71,15 +67,21 @@ class _HomePageState extends State<HomePage> {
     db.updateDatabase();
   }
 
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Tasker"),
-        centerTitle: true,
-        backgroundColor: Colors.cyanAccent,
-        //actions: [IconButton(onPressed: logout, icon: const Icon(Icons.logout))],
-      ),
+          elevation: 1,
+          toolbarHeight: 80,
+          title: Text("Hey there, " + db.name, style: TextStyle(fontSize: 25)),
+          centerTitle: true,    
+          titleSpacing: 25,
+          titleTextStyle: const TextStyle(fontSize: 25, color: Colors.black),
+          backgroundColor: Colors.cyanAccent,
+          //actions: [IconButton(onPressed: logout, icon: const Icon(Icons.logout))],
+        ),
+      
 
       floatingActionButton: FloatingActionButton(onPressed: addNewTask,child: const Icon(Icons.add),),
 
