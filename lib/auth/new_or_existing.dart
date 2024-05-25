@@ -13,7 +13,7 @@ class NewOrExisting extends StatelessWidget {
     if(_myBox.get("name") == null){
       return FirstPage();
     }else{
-      return HomePage();
+      return const HomePage();
     }
   }
 }

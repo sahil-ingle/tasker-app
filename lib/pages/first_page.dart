@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 import 'package:hive_flutter/adapters.dart';
 import 'package:tasker/components/my_button.dart';
 import 'package:tasker/components/my_textfield.dart';
@@ -13,10 +14,15 @@ class FirstPage extends StatelessWidget {
   
 
   void onTap(BuildContext context){
-    _myBox.put("name", _nameController.text);
-    
 
-    Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => HomePage() ,maintainState: false));
+    if (_nameController.text != ""){
+      _myBox.put("name", _nameController.text);
+      Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => const HomePage() ,maintainState: false));
+
+    }else{
+      Fluttertoast.showToast(msg: "Enter your name");
+    }
+    
   }
 
   @override

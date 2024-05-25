@@ -74,9 +74,9 @@ class _HomePageState extends State<HomePage> {
       appBar: AppBar(
           elevation: 1,
           toolbarHeight: 80,
-          title: Text("Hey there, " + db.name, style: TextStyle(fontSize: 25)),
-          centerTitle: true,    
-          titleSpacing: 25,
+        title: Text("Hey there, ${db.name}", style: const TextStyle(fontSize: 25)),
+        centerTitle: true,    
+      titleSpacing: 25,
           titleTextStyle: const TextStyle(fontSize: 25, color: Colors.black),
           backgroundColor: Colors.cyanAccent,
           //actions: [IconButton(onPressed: logout, icon: const Icon(Icons.logout))],
